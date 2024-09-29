@@ -1,0 +1,15 @@
+<div class="col-3">
+  <div class="card w">
+    <img src="<%= movie.poster_url %>" alt="">
+    <div class="card-body">
+      <h4><%= movie.title %> ️ <%= movie.rating %> ⭐️</h4>
+      <p><%= movie.overview %></p>
+    </div>
+        <p class="btn btn-outline-warning mx-2"><%= movie.bookmarks.first.comment %></p>
+    <div class="card-footer">
+      <h5>Bookmark</h4>
+      <%= link_to "Delete", bookmark_path(movie.bookmarks.first), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{movie.title} from this list?"}, class: "btn btn-danger" %>
+      <%= link_to "Add", new_movie_bookmark_path(movie), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

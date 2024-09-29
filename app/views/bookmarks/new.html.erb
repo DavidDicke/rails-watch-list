@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+      <img class="poster-banner" src="<%= @movie.poster_url %>" alt="">
+    </div>
+    <div class="col-6">
+      <h1>Bookmark <%= @movie.title %></h1>
+      <%= simple_form_for [@movie, @bookmark] do |f|%>
+        <%= f.input :list, collection: List.all %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= link_to "back to Movies", movies_path, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

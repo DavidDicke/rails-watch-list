@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h1>Add a list</h1>
+      <%# <p>Find me in app/views/lists/new.html.erb</p> %>
+      <%= simple_form_for @list do |f|%>
+        <%= f.input :name %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= link_to "back to Lists", lists_path, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

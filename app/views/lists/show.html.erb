@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <div class="row">
+    <% @list.movies.each do |movie| %>
+      <%= render "movie_card", movie: movie %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="col-4">
+  <div class="card w">
+    <img src="<%= movie.poster_url %>" alt="">
+    <div class="card-body">
+      <h4><%= movie.title %> ️ <%= movie.rating %> ⭐️</h4>
+      <p><%= movie.overview %></p>
+      <div>
+        <% movie.lists.each do |list| %>
+          <%= link_to list.name, list_path(list), class: "btn btn-warning rounded-4 p-1" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to "Bookmark", new_movie_bookmark_path(movie), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

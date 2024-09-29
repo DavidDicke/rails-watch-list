@@ -11,6 +11,25 @@
   </head>
 
   <body>
+    <nav class="navbar-lewagon">
+      <div class="row w-100 align-items-center mx-0">
+        <div class="col-4 px-0">
+          <div class="w-100">
+            <%= link_to "All Movies", movies_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+        <div class="col-4 px-0">
+          <div class="w-100 d-flex justify-content-center">
+            <%= link_to "Watchlists", lists_path, class: "logo-font ms-3" %>
+          </div>
+        </div>
+        <div class="col-4 px-0">
+          <div class="w-100 d-flex justify-content-end">
+            <%= link_to "Add List", new_list_path, class: "btn btn-success ms-2" %>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

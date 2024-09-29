@@ -1,0 +1,19 @@
+<div class="container">
+<h1>All Movies</h1>
+<p>Welcome to WatchList. Inspiration for your first Watch-List</p>
+  <div class="row mb-5">
+    <form>
+      <div class="d-flex">
+        <input type="text" type="search" class="form-control" name="query" id="search-form" placeholder="Find a movie" value="<%= params[:query] %>">
+        <input type="submit" class="btn btn-success ms-3" value="Search">
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <% unless @movies.nil? %>
+      <% @movies.each do |movie| %>
+        <%= render "movie_card", movie: movie %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
